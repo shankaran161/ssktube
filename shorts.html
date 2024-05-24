@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Shorts Video Player</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .shorts-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .shorts-video {
+            width: 100%;
+            max-width: 360px;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .shorts-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="shorts-container">
+        <div class="shorts-video" id="video1-container">
+            <iframe id="video1" src="https://www.youtube.com/embed/kNUQtbhX5bU?enablejsapi=1&loop=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div class="shorts-video" id="video2-container">
+            <iframe id="video2" src="https://www.youtube.com/embed/VF0bjRv7ieE?enablejsapi=1&loop=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div class="shorts-video" id="video3-container"> <!-- Corrected ID -->
+            <iframe id="video3" src="https://youtube.com/shorts/sBEQExdZq5M?si=04izSJxSFE0srFCk&enablejsapi=1&loop=1" <!-- Updated Link -->
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        var players = [];
+        var currentVideo = null;
+
+        // Function to create YouTube player
+        function createPlayer(videoId, playerId) {
+            return new YT.Player(playerId, {
+                videoId: videoId,
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                },
+                playerVars: {
+                    'loop': 1,
+                    'playlist': videoId
+                }
+            });
+        }
+
+        // Event handler for player ready
+        function onPlayerReady(event) {
+            players.push(event.target);
+        }
+
+        // Event handler for player state change
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                event.target.playVideo(); // Loop video
+            }
+        }
+
+        // Function to pause all videos
+        function pauseAllVideos() {
+            players.forEach(function(player) {
+                player.pauseVideo();
+            });
+        }
+
+        // Function to seek video to start
+        function seekToStart() {
+            players.forEach(function(player) {
+                player.seekTo(0);
+            });
+        }
+
+        // Load YouTube IFrame Player API
+        function onYouTubeIframeAPIReady() {
+            createPlayer('kNUQtbhX5bU', 'video1');
+            createPlayer('VF0bjRv7ieE', 'video2');
+            createPlayer('sBEQExdZq5M', 'video3');
+            setupIntersectionObserver();
+        }
+
+        // Setup Intersection Observer
+        function setupIntersectionObserver() {
+            var options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Adjust this value as needed
+            };
+
+            var observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        pauseAllVideos();
+                        seekToStart();
+                        var videoId = entry.target.querySelector('iframe').id;
+                        players.forEach(function(player) {
+                            if (player.getIframe().id === videoId) {
+                                player.playVideo();
+                                currentVideo = player;
+                            }
+                        });
+                    }
+                });
+            }, options);
+
+            document.querySelectorAll('.shorts-video').forEach(video => {
+                observer.observe(video);
+            });
+        }
+
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+</body>
+</html>

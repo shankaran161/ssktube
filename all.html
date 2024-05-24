@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <title>SKTUBE</title>
+    <link rel="icon" type="tube/x-icon" href="video cam.png">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
+
+    * {
+        margin: 4;
+        padding: 4;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f9f9f9;
+    }
+    
+    .material-icons {
+        color: #606060;
+    }
+    
+    .header {
+        display: flex;
+        align-items: center; /* Changed to center */
+        justify-content: space-between;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header_left {
+        display: flex; /* Added */
+        align-items: center; /* Added */
+    }
+    
+    .header_search form {
+        display: flex;
+        align-items: center;
+        border: 1px solid #141414; /* Changed border width */
+        border-radius: 2px;
+    }
+    
+    .header_search input[type="text"] {
+        border: none;
+        padding: 12px;
+        font-size: 15px;
+        width: 400px;
+    }
+    
+    .header_search button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    /* CSS styles for submit button */
+    form {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    input[type="submit"] {
+        background-color: #868d86;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #a5a1a3;
+    }
+    
+    .button-container {
+    
+        display: flex;
+        gap: 10px; /* Adjust the gap between buttons */
+    }
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .mainbody {
+        display: flex;
+        margin-top: 20px; /* Adjusted margin */
+    }
+
+    
+    
+    
+    .slidebar {
+        width: 230px;
+        background-color: #fff;
+        padding: 10px;
+        margin-top: 20px; /* Add margin to separate from buttons */
+    }
+    
+    
+    .slidebar hr {
+        border-top: 1px solid #ddd;
+        margin: 10px 0;
+    }
+    
+    .sidebar_categories {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .sidebar_categories:hover {
+        background-color: #f0f0f0;
+    }
+    
+    .sidebar_categories i {
+        margin-right: 10px;
+    }
+    
+    .videos {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto; /* Add this line to enable vertical scrolling */
+    }
+    
+    .videos h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .videos_container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .video {
+        width: calc(33.33% - 20px);
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .video_thumbline img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .video_details {
+        padding: 10px;
+    }
+    
+    .author img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+    .title h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    
+    .title a {
+        color: #606060;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .title span {
+        color: #999;
+        font-size: 12px;
+    }
+    
+        
+</style>
+
+
+</head>
+<body>
+
+<div class="header">
+    <div class="header_left">
+        <i class="material-icons">menu</i>
+        <img src="tube.png" alt="Shankaran Tube" width="200" height="150">
+    </div>
+    <div class="header_search"> 
+        <form action="">
+            <input type="text" placeholder="Search">
+            <button><i class="material-icons">search</i></button>
+        </form>
+    </div>
+    <div class="header_icons">
+        <i class="material-icons">videocam</i>
+        <i class="material-icons">apps</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons">account_circle</i>
+    </div>
+</div>
+
+<div class="button-wrapper">
+    <div class="button-container">
+        <!-- Your button forms here -->
+
+<form action="all.html" method="get">
+ <input type="submit" value="all">
+</form>
+
+<form action="web development.html" method="get">
+    <input type="submit" value="web development">
+</form>
+
+<form action="free fire .html" method="get">
+    <input type="submit" value="free fire">
+</form>
+
+<form action="gaming.html" method="get">
+    <input type="submit" value="gaming">
+</form>
+<form action="music.html" method="get">
+    <input type="submit" value="music">
+</form>
+<form action="jobs.html" method="get">
+    <input type="submit" value="jobs">
+</form>
+<form action="mobile gadgets.html" method="get">
+    <input type="submit" value="mobile ">
+</form>
+<form action="cooking.html" method="get">
+    <input type="submit" value="cookingl">
+</form>
+<form action="computer gadgets.html" method="get">
+    <input type="submit" value="computer">
+</form>
+<form action="striching.html" method="get">
+    <input type="submit" value="tailoring">
+</form>
+<form action="craft.html" method="get">
+    <input type="submit" value="craft">
+</form>
+
+</div></div>
+
+<<div class="mainbody">
+    <div class="slidebar">
+        <div class="sidebar_categories">
+            <a href="all.html">
+                <i class="material-icons">home</i>
+                <span>Home</span>
+            </a>
+        </div>
+        <div class="sidebar_categories">
+            <a href="shorts.html">
+                <i class="material-icons">play_arrow</i>
+                <span>Shorts</span>
+            </a>
+        </div>
+        <div class="sidebar_categories">
+            <a href="subscription.html">
+                <i class="material-icons">subscriptions</i>
+                <span>Subscriptions</span>
+            </a>
+        </div>
+        <hr />
+        <div class="sidebar_categories">
+            <a href="library.html">
+                <i class="material-icons">library_add_check</i>
+                <span>Library</span>
+            </a>
+        </div>
+        <div class="sidebar_categories">
+            <a href="history.html">
+                <i class="material-icons">history</i>
+                <span>History</span>
+            </a>
+        </div>
+        <div class="sidebar_categories">
+            <a href="your_videos.html">
+                <i class="material-icons">play_arrow</i>
+                <span>Your Videos</span>
+            </a>
+        </div>
+        <div class="sidebar_categories">
+            <a href="watch_later.html">
+                <i class="material-icons">watch_later</i>
+                <span>Watch Later</span>
+            </a>
+        </div>
+        <div class="sidebar_categories">
+            <a href="liked_videos.html">
+                <i class="material-icons">thumb_up</i>
+                <span>Liked Videos</span>
+            </a>
+        </div>
+    </div>
+    <div class="videos">
+        <h1>SKTUBE</h1>    
+        <div class="videos_container">
+            <!-- First video -->
+            <div class="video">
+                <div class="video_thumbline">
+                    <!-- Embedded video -->
+                    <iframe width="350" height="200" src="https://www.youtube.com/embed/eXCWBbbuNAM?si=1bJpPpv-xDFcTM84" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video_details">
+                    <div class="author">
+                        <img src="download.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h3>Top 10 Murugan Songs #Murugan</h3>
+                        <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                        <span>1,000M views • 1 year ago</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second video -->
+            <div class="video"> 
+                <div class="video_thumbline">
+                    <!-- Embedded video -->
+                    <iframe width="350" height="200" src="https://www.youtube.com/embed/VF0bjRv7ieE?si=mJIZwbFCYM43uAX2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video_details">
+                    <div class="author">
+                        <img src="download.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h3>senthil & vadivelu dosa eating comedy #comedy</h3>
+                        <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                        <span>1,000M views • 1 year ago</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third video -->
+            <div class="video">
+                <div class="video_thumbline">
+                    <!-- Embedded video -->
+                    <iframe width="350" height="200" src="https://www.youtube.com/embed/0G2VxhV_gXM?si=d5Zfcw3iH6WfDwHS" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video_details">
+                    <div class="author">
+                        <img src="download.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h3>premam malare video song in tamil </h3>
+                        <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                        <span>2M views 4week  ago</span>
+                    </div>
+                </div>
+            </div>
+            
+         <!-- Fourth video -->
+<div class="video">
+    <div class="video_thumbline">
+        <!-- Embedded video -->
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/DeUhSvr6b-A?si=MrcpWPOj7-DKjnbu" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video_details">
+        <div class="author">
+            <img src="download.jpg" alt="">
+        </div>
+        <div class="title">
+            <h3>Basic Excel Knowledge For Beginner's</h3>
+            <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m ">shankaran's techey Vlogs</a>
+            <span>200M views. 1year ago </span>
+        </div>
+    </div>
+</div>
+                <!-- Fifth video -->
+                <div class="video"> 
+                    <div class="video_thumbline">
+                        <!-- Embedded video -->
+                        <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video_details">
+                        <div class="author">
+                            <img src="download.jpg" alt="">
+                        </div>
+                        <div class="title">
+                            <h3>Mottu Pattlu Full Comedy And One Full Episode</h3>
+                            <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                            <span>200Kviews • 4 year ago</span>
+                        </div>
+                    </div>
+                </div>
+            <!-- Sixth video -->
+            <div class="video"> 
+                <div class="video_thumbline">
+                    <!-- Embedded video -->
+                    <iframe width="350" height="200" src="https://www.youtube.com/embed/bUxd3jqCr94?si=L_De25kJTW2pb76M" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video_details">
+                    <div class="author">
+                        <img src="download.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h3>Mr Bean UnlimetedComedy</h3>
+                        <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                        <span>200M views 5 year ago</span>
+                    </div>
+                </div>
+            </div>
+        <!-- seventh video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed//LhlmbgpG7Vw?si=Kc01foPSV5iNsxbf" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Eight video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/FYMCM3mctxY?si=zMaOkSJHoG232e69" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Unnai Naan - 4K Video Song | உன்னை நான் | Jay Jay | Madhavan | Amogha | Bharathwaj | Ayngaran</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>130M views • 10 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- night video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/XpC4jc9CIOw?si=B9LrglG4fuLyzOij" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Last To Leave Parotta Eating Challenge Wins ₹1000</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>339k views • 4 months ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- tenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/I1ptUuzMkf4?si=jWdLsnXBxxBOpXJh" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Project: Login Form using Html & CSS </h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>40k views • 7 dayss ago</span>
+                </div>
+            </div>
+        </div>
+        <!--Eleventh video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/eZ-4UNehQXI?si=XP4_qMwyMYn_pcq7" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>மளிகைகடை அலப்பறைகள் ⚖️ | Autokaaran Alapparaigal</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>250 views • 9Months ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Twelfth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/FeSFp1spU7o?si=eIvyOfHtQGQy6YW1" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>How to Create a Data Entry Form in Excel in Tamil</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1.2M views • 5 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Thirteenthvideo -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed//st-kdIdvVmY?si=Fi0pUs4PD51AnxNF" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>realme 10 vs Redmi note 12 vs Poco M5 vs iQOO Z6 lite vs Samsung A14 Battery Drain Test 100 to 0</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>55k views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!--  Fourteenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Fifteenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Sixteenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Seventeenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!--  Eighteenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        <!-- Nineteenth video -->
+        <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+         <!-- twenty video -->
+         <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+         <!-- twentyone video -->
+         <div class="video"> 
+            <div class="video_thumbline">
+                <!-- Embedded video -->
+                <iframe width="350" height="200" src="https://www.youtube.com/embed/0P3jt82B2Fo?si=oA3CgrfBsf2f5d-n" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video_details">
+                <div class="author">
+                    <img src="download.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h3>Top 10 Murugan Songs #Murugan</h3>
+                    <a href="https://youtube.com/@thefunnyfix-ml4og?si=O02zlqvwUc7sb9_m">Shankaran's Techey Vlogs</a>
+                    <span>1,000M views • 1 year ago</span>
+                </div>
+            </div>
+        </div>
+        </div

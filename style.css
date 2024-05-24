@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
+
+* {
+    margin: 4;
+    padding: 4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.material-icons {
+    color: #606060;
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Changed to center */
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header_left {
+    display: flex; /* Added */
+    align-items: center; /* Added */
+}
+
+.header_search form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #141414; /* Changed border width */
+    border-radius: 2px;
+}
+
+.header_search input[type="text"] {
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    width: 400px;
+}
+
+.header_search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* CSS styles for submit button */
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #868d86;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #a5a1a3;
+}
+
+.button-container {
+
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons */
+}
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mainbody {
+    display: flex;
+    margin-top: 20px; /* Adjusted margin */
+}
+
+
+.slidebar {
+    width: 230px;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 20px; /* Add margin to separate from buttons */
+}
+
+
+.slidebar hr {
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.sidebar_categories {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar_categories:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar_categories i {
+    margin-right: 10px;
+}
+
+.videos {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+}
+
+.videos h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.videos_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.video_thumbline img {
+    width: 100%;
+    height: auto;
+}
+
+.video_details {
+    padding: 10px;
+}
+
+.author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.title h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.title a {
+    color: #606060;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.title span {
+    color: #999;
+    font-size: 12px;
+}
+ 
